@@ -1,11 +1,21 @@
-import React from 'react';
+import React, {useState} from 'react';
+import '@fortawesome/fontawesome-free/css/all.css'
 
 function MainContent(props){
+    const [country, setCountry] = useState('');
+    const [frequency, setFrequency] = useState('daily');
+    const [email, setEmail] = useState('');
+
+    const handleSubmit = () => {
+        
+    }
+
     return(
-        <div>
-            <h1 className='title'>Select Your Country To Recive Alerts</h1>
-            <div class="select is-multiple">
-  <select style={{fontSize: '30px'}} multiple size="5">
+        <div style={{marginTop:'2rem', display:'flex', flexDirection: 'column', alignItems:'center', justifyContent:'center'}}>
+            <h1 className='title'>Set Up Email Alerts For Coronavirus</h1>
+            <label class="label">Country</label>
+            <div class="select">
+  <select value={country} onChange={(e) => {setCountry(e.target.value)}} style={{fontSize: '20px'}}>
   <option value="AF">Afghanistan</option>
 <option value="AL">Albania</option>
 <option value="DZ">Algeria</option>
@@ -190,6 +200,27 @@ function MainContent(props){
 <option value="ZW">Zimbabwe</option>
   </select>
 </div>
+<div style={{display: 'flex', flexDirection:'column', alignItems:'center', marginTop:'2rem'}}>
+<label class="label">Frequency</label>
+            <div class="select">
+  <select value={frequency} onChange={(e) => {setFrequency(e.target.value)}} style={{fontSize: '20px'}}>
+  <option value="daily">Daily</option>
+  <option value="hourly">Hourly (When there is a change)</option>
+      </select>
+      </div>
+</div>
+<div class="field" style={{width:'50%', display:'flex', alignItems:'center', flexDirection:'column', justifyContent:'center', margin:'1rem auto'}}>
+  <label class="label">Email</label>
+  <div class="control has-icons-left">
+    <input class="input" type="email" placeholder="Email" value={email} onChange={(e) => {setEmail(e.target.value)}}/>
+    <span class="icon is-small is-left">
+      <i class="fas fa-envelope"></i>
+    </span>
+  </div>
+</div>
+<div class="control">
+    <button onCLick={handleSubmit} class="button is-link">Submit</button>
+  </div>
         </div>
     )
 }
