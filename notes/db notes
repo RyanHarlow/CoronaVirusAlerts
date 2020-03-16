@@ -1,0 +1,15 @@
+db notes
+
+person:
+    id: id
+    email: varchar
+    location: varchar
+    countrycode: varchar
+    alerts: hourly/daily
+    lastNumber: int
+
+country:
+
+    name: varchar
+    code: varchar
+    number: int  updated hourly

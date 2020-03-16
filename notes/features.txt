@@ -1,0 +1,4 @@
+user gets alerts to email.
+user can choose to be alerted every change or every day
+user chooses country to be alerted about.
+unsubscribe link in email using jwts
