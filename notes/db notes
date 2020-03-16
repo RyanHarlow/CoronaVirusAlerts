@@ -13,3 +13,19 @@ country:
     name: varchar
     code: varchar
     number: int  updated hourly
+
+CREATE DATABASE corona
+
+CREATE TABLE person(
+   person_id serial PRIMARY KEY,
+   country VARCHAR (300) NOT NULL,
+   email VARCHAR (355) UNIQUE NOT NULL,
+   frequency VARCHAR (10),
+   total_recovered integer,
+   total_unresolved integer,
+   total_deaths integer,
+   new_cases_today integer,
+   new_deaths_today integer,
+   total_active integer,
+   total_serious integer
+);
